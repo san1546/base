@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.eurakeclient.dao.MailMapper">
+  <resultMap id="BaseResultMap" type="com.example.eurakeclient.model.Mail">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fromEmail" jdbcType="VARCHAR" property="fromemail" />
+    <result column="subject" jdbcType="VARCHAR" property="subject" />
+    <result column="replyTo" jdbcType="VARCHAR" property="replyto" />
+    <result column="attachment" jdbcType="VARCHAR" property="attachment" />
+    <result column="receipt_time" jdbcType="TIMESTAMP" property="receiptTime" />
+    <result column="mail_flag" jdbcType="INTEGER" property="mailFlag" />
+    <result column="mail_status" jdbcType="INTEGER" property="mailStatus" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.eurakeclient.model.Mail">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, fromEmail, subject, replyTo, attachment, receipt_time, mail_flag, mail_status
+  </sql>
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from email_content
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from email_content
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.eurakeclient.model.Mail">
+    insert into email_content (id, fromEmail, subject, 
+      replyTo, attachment, receipt_time, 
+      mail_flag, mail_status, content
+      )
+    values (#{id,jdbcType=INTEGER}, #{fromemail,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, 
+      #{replyto,jdbcType=VARCHAR}, #{attachment,jdbcType=VARCHAR}, #{receiptTime,jdbcType=TIMESTAMP}, 
+      #{mailFlag,jdbcType=INTEGER}, #{mailStatus,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.eurakeclient.model.Mail">
+    insert into email_content
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="fromemail != null">
+        fromEmail,
+      </if>
+      <if test="subject != null">
+        subject,
+      </if>
+      <if test="replyto != null">
+        replyTo,
+      </if>
+      <if test="attachment != null">
+        attachment,
+      </if>
+      <if test="receiptTime != null">
+        receipt_time,
+      </if>
+      <if test="mailFlag != null">
+        mail_flag,
+      </if>
+      <if test="mailStatus != null">
+        mail_status,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fromemail != null">
+        #{fromemail,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="replyto != null">
+        #{replyto,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null">
+        #{attachment,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptTime != null">
+        #{receiptTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mailFlag != null">
+        #{mailFlag,jdbcType=INTEGER},
+      </if>
+      <if test="mailStatus != null">
+        #{mailStatus,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.eurakeclient.model.Mail">
+    update email_content
+    <set>
+      <if test="fromemail != null">
+        fromEmail = #{fromemail,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="replyto != null">
+        replyTo = #{replyto,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null">
+        attachment = #{attachment,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptTime != null">
+        receipt_time = #{receiptTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mailFlag != null">
+        mail_flag = #{mailFlag,jdbcType=INTEGER},
+      </if>
+      <if test="mailStatus != null">
+        mail_status = #{mailStatus,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.eurakeclient.model.Mail">
+    update email_content
+    set fromEmail = #{fromemail,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      replyTo = #{replyto,jdbcType=VARCHAR},
+      attachment = #{attachment,jdbcType=VARCHAR},
+      receipt_time = #{receiptTime,jdbcType=TIMESTAMP},
+      mail_flag = #{mailFlag,jdbcType=INTEGER},
+      mail_status = #{mailStatus,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.eurakeclient.model.Mail">
+    update email_content
+    set fromEmail = #{fromemail,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      replyTo = #{replyto,jdbcType=VARCHAR},
+      attachment = #{attachment,jdbcType=VARCHAR},
+      receipt_time = #{receiptTime,jdbcType=TIMESTAMP},
+      mail_flag = #{mailFlag,jdbcType=INTEGER},
+      mail_status = #{mailStatus,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

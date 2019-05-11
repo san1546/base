@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base.iml" filepath="$PROJECT_DIR$/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurakeclient/eurakeclient.iml" filepath="$PROJECT_DIR$/eurakeclient/eurakeclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurakeserver/eurakeserver.iml" filepath="$PROJECT_DIR$/eurakeserver/eurakeserver.iml" />
+    </modules>
+  </component>
+</project>
