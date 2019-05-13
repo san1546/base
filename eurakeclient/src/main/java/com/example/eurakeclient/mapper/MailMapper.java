@@ -1,4 +1,4 @@
-package com.example.eurakeclient.dao;
+package com.example.eurakeclient.mapper;
 
 import com.example.eurakeclient.model.Mail;
 
