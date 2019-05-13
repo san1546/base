@@ -2,14 +2,18 @@ package com.example.eurakeclient.mapper;
 
 import com.example.eurakeclient.model.Mail;
 
+import java.util.List;
+
 public interface MailMapper {
+
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Mail record);
 
     int insertSelective(Mail record);
 
-    Mail selectByPrimaryKey(Integer id);
+    List selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Mail record);
 

@@ -3,15 +3,20 @@ package com.example.eurakeclient.service;
 import com.example.eurakeclient.mapper.MailMapper;
 import com.example.eurakeclient.model.Mail;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Author: hyh
  * @Date: Created by 9:43 2019/5/13
  * @Description:
  */
+@Service(value="mailService")
 public class MailService implements MailMapper {
     @Autowired
     private MailMapper mailMapper;
+
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
@@ -29,7 +34,7 @@ public class MailService implements MailMapper {
     }
 
     @Override
-    public Mail selectByPrimaryKey(Integer id) {
+    public List selectByPrimaryKey(Integer id) {
         return mailMapper.selectByPrimaryKey(id);
     }
 
