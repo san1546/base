@@ -9,12 +9,16 @@
         <module name="base" />
         <module name="eurakeclient" />
         <module name="eurakeserver" />
+        <module name="ribbon" />
+        <module name="zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="base" target="1.5" />
       <module name="eurakeclient" target="1.8" />
       <module name="eurakeserver" target="1.8" />
+      <module name="ribbon" target="1.8" />
+      <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

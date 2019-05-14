@@ -4,9 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/base.iml" filepath="$PROJECT_DIR$/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurakeclient/eurakeclient.iml" filepath="$PROJECT_DIR$/eurakeclient/eurakeclient.iml" />
-      <module fileurl="file://C:\Users\hyh\IdeaProjects\base\eurakeclient\eurakeclient.iml" filepath="C:\Users\hyh\IdeaProjects\base\eurakeclient\eurakeclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurakeserver/eurakeserver.iml" filepath="$PROJECT_DIR$/eurakeserver/eurakeserver.iml" />
-      <module fileurl="file://C:\Users\hyh\IdeaProjects\base\eurakeserver\eurakeserver.iml" filepath="C:\Users\hyh\IdeaProjects\base\eurakeserver\eurakeserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbon/ribbon.iml" filepath="$PROJECT_DIR$/ribbon/ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
     </modules>
   </component>
 </project>
