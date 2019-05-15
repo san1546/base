@@ -16,7 +16,7 @@ public class IndexService {
     RestTemplate restTemplate;
 
     public String helloService() {
-        return restTemplate.getForObject("http://EURAKE-CLIENT/index", String.class);
+        return restTemplate.getForObject("http://EURAKE-CLIENT/hello", String.class);
     }
 
 }
