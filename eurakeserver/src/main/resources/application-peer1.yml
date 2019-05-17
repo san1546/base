@@ -3,24 +3,24 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
-  server:
-          # 关闭自我保护
-          enable-self-preservation: false
-          # 清理服务器
-          eviction-interval-timer-in-ms: 5000
+    hostname: 127.0.0.1
+#  server:
+#          # 关闭自我保护
+#          enable-self-preservation: false
+#          # 清理服务器
+#          eviction-interval-timer-in-ms: 5000
   client:
     register-with-eureka: false
     fetch-Registry: false
     serviceUrl:
 #      defaultZone: http://peer2:1133/eureka
-      defaultZone: http://${eureka.instance.hostname}:1133/eureka
+      defaultZone: http://localhost:1133/eureka/
 spring:
   application:
     name: eureka-server-compus
-  security:
-    basic:
-      enabled: true
-    user:
-      name: root
-      password: san1546
+#  security:
+#    basic:
+#      enabled: true
+#    user:
+#      name: root
+#      password: san1546

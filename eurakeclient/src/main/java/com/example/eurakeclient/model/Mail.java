@@ -1,7 +1,5 @@
 package com.example.eurakeclient.model;
 
-import java.util.Date;
-
 public class Mail {
     private Integer id;
 
@@ -13,7 +11,7 @@ public class Mail {
 
     private String attachment;
 
-    private Date receiptTime;
+    private String receiptTime;
 
     private Integer mailFlag;
 
@@ -61,11 +59,11 @@ public class Mail {
         this.attachment = attachment == null ? null : attachment.trim();
     }
 
-    public Date getReceiptTime() {
+    public String getReceiptTime() {
         return receiptTime;
     }
 
-    public void setReceiptTime(Date receiptTime) {
+    public void setReceiptTime(String receiptTime) {
         this.receiptTime = receiptTime;
     }
 

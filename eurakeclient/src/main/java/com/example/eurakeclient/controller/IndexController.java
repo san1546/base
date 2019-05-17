@@ -17,19 +17,19 @@ import java.util.List;
 
 
 
-@RestController //显示返回的值
-//@Controller
+//@RestController //显示返回的值
+@Controller
 public class IndexController {
 
-//    @Autowired
-//    RestTemplate restTemplate;
-//
-//    @Autowired
-//    private MailMenuService mailMenuService;
-//
-//    @Autowired
-//    private MailService mailService;
-//
+    @Autowired
+    RestTemplate restTemplate;
+
+    @Autowired
+    private MailMenuService mailMenuService;
+
+    @Autowired
+    private MailService mailService;
+
 //    @Autowired
 //    IpConfiguration ipConfiguration;
     @Value("${server.port}")
